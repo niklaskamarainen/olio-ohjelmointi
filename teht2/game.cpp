@@ -3,11 +3,12 @@
 Game::Game(int maxNum):maxNumber(maxNum), playerGuess(0), numOfGuesses(0){
     std::srand(time(NULL));
     randomNumber = std::rand() % maxNumber + 1;
+    cout<<"GAME CONSTRUCTOR: Arvottiin luku: "<<randomNumber<<endl;
 }
 
 Game::~Game()
 {
-
+    cout<<"GAME DESTRUCTOR: object cleared from stack memory"<<endl;
 }
 
 void Game::play()
@@ -35,7 +36,7 @@ void Game::play()
 
 void Game::printGameResult()
 {
-    cout<<"Peli paattyi! Arvasit Oikein!"<<endl;
+    cout<<"Peli paattyi! Arvasit oikein luvun: "<<randomNumber<<" ja kaytit arvauksia "<<numOfGuesses<<endl;
 }
 
 
